@@ -1,4 +1,4 @@
-let deadLine = '2019-08-20';
+let deadLine = '2019-08-20'; //time when the timer stops
 
 function getTimeRemaining(endTime) {
     let t = Date.parse(endTime) - Date.parse(new Date()),
@@ -34,10 +34,11 @@ function setClock(id, endTime) {
         } else {
             seconds.textContent = '0' + t.seconds;
         }
-
+        
+        //set time to 00:00:00 at the end
         if (t.total <= 0) {
             clearInterval(timeInterval);
-            seconds.textContent = '00'; //set time to 00:00:00 at the end
+            seconds.textContent = '00'; 
             minutes.textContent = '00';
             hours.textContent = '00';
         }
